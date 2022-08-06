@@ -1,0 +1,1 @@
+import{b as o}from"./route-block.2f1a6263.js";import{_ as e,c as t,o as _}from"./index.48d3c1b5.js";const c={};function n(r,a){return _(),t("div",null,"404")}typeof o=="function"&&o(c);const l=e(c,[["render",n]]);export{l as default};
