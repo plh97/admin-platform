@@ -1,1 +1,0 @@
-import{b as o}from"./route-block.2f1a6263.js";import{_ as c,c as t,o as n}from"./index.48d3c1b5.js";const e={};function r(f,s){return n(),t("div",null,"home")}typeof o=="function"&&o(e);const m=c(e,[["render",r]]);export{m as default};
