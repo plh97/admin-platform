@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { filterRouter, i18nRouter, sortRoute } from "@/util/route";
+import { filterRouter, i18nRouter, sortRoute } from "@/utils/route";
 import routers from "virtual:generated-pages";
 import { computed } from "vue";
 import menuItem from "./menuItem.vue";

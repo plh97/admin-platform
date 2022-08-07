@@ -7,7 +7,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --port 3000",
-    "mock": "PROXY=mock vite --port 3000",
+    "mock": "PROXY=MOCK vite --port 3000",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },

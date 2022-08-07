@@ -27,6 +27,7 @@ import Sidebar from "@/components/sidebar/index.vue";
     flex-direction: row;
     .main {
       padding: 10px;
+      width: 100%;
     }
   }
 }

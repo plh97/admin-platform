@@ -1,11 +1,16 @@
-import { Axios } from "axios";
+import axios, { Axios, AxiosProxyConfig } from "axios";
 import { ElMessage } from "element-plus";
+import axiosRetry from "axios-retry";
 
-const request = new Axios({
-  baseURL: "http://localhost:3000/api",
+const instance = axios.create({
+  //   withCredentials: true,
+  baseURL: "/api",
 });
+
+axiosRetry(axios, { retries: 3 });
+
 // Add a request interceptor
-request.interceptors.request.use(
+instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     return config;
@@ -17,11 +22,14 @@ request.interceptors.request.use(
 );
 
 // Add a response interceptor
-request.interceptors.response.use(
+instance.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    return response;
+    // success
+    if (response.data.code === 0) {
+      return response.data;
+    }
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
@@ -31,4 +39,11 @@ request.interceptors.response.use(
   }
 );
 
-export default request;
+export default function request(option: AxiosProxyConfig) {
+  return new Promise((resolve, reject) => {
+    instance
+      .request(option)
+      .then((res) => resolve(res))
+      .catch((err) => reject(err));
+  });
+}
