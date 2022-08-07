@@ -8,7 +8,8 @@ export default {
   detail: "Detail",
   list: "List",
   log: 'Log',
-  1: "1",
-  "1-1": "1-1",
-  "1-1-1": "1-1-1",
+  1: "level 1 folder",
+  "1-1": "level 2 folder",
+  "1-2": "level 2 page",
+  "1-1-1": "level 3",
 };

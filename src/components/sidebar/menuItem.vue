@@ -12,7 +12,8 @@
       </el-icon>
       <span>{{ route.meta?.name }}</span>
     </template>
-    <slot :routes="route.children" />
+    <menu-item v-for="_route of route.children" :route="_route"></menu-item>
+    <!-- <slot :routes="route.children" /> -->
   </el-sub-menu>
 </template>
 
