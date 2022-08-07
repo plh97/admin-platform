@@ -1,1 +1,0 @@
-import{b as o}from"./route-block.2f1a6263.js";import{_ as c,c as e,o as n}from"./index.acdc32a0.js";const t={};function r(s,f){return n(),e("div",null,"todo-list")}typeof o=="function"&&o(t);const _=c(t,[["render",r]]);export{_ as default};

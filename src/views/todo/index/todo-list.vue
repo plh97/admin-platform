@@ -1,8 +1,16 @@
 <template>
   <div>todo-list</div>
+  {{ data }}
 </template>
 
-<script setup></script>
+<script setup>
+import http from "@/utils/request";
+
+const data = await http({
+  url: "/list",
+  method: "get",
+});
+</script>
 
 <route lang="yaml">
 name: list

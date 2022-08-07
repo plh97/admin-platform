@@ -2,7 +2,7 @@ export default {
   home: "首页",
   contact: "联系人",
   about: "关于",
-  todo: "待完成",
+  todo: "待办事项",
   add: "添加",
   edit: "编辑",
   detail: "详情",

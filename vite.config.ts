@@ -9,6 +9,7 @@ import Pages from "vite-plugin-pages";
 import { resolve } from "path";
 import Icons from "unplugin-icons/vite";
 import checker from "vite-plugin-checker";
+import { viteMockServe } from "vite-plugin-mock";
 
 export default defineConfig({
   plugins: [
@@ -35,6 +36,13 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+
+    process.env.PROXY === "MOCK" &&
+      viteMockServe({
+        // default
+        mockPath: "mock",
+        localEnabled: true,
+      }),
   ],
   resolve: {
     alias: {
