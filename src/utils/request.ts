@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosProxyConfig } from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { ElMessage } from "element-plus";
 import axiosRetry from "axios-retry";
 
@@ -30,6 +30,7 @@ instance.interceptors.response.use(
     if (response.data.code === 0) {
       return response.data;
     }
+    ElMessage.error(response.data.msg);
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
@@ -39,11 +40,17 @@ instance.interceptors.response.use(
   }
 );
 
-export default function request(option: AxiosProxyConfig) {
-  return new Promise((resolve, reject) => {
+interface BaseResponse<T> {
+  data: T;
+  code: number;
+  msg: string;
+}
+
+export default function request<T = unknown>(option: AxiosRequestConfig) {
+  return new Promise<T>((resolve, reject) => {
     instance
-      .request(option)
-      .then((res) => resolve(res))
+      .request<T>(option)
+      .then((res) => resolve(res.data))
       .catch((err) => reject(err));
   });
 }

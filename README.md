@@ -25,3 +25,5 @@
 - [ ] lint-stage
 
 - [ ] jest
+
+- [ ] make a repository about localstorage

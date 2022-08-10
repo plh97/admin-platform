@@ -2,7 +2,7 @@
   <div>contact</div>
 </template>
 
-<script setup></script>
+<script lang="ts" setup></script>
 
 <route lang="yaml">
 name: contact

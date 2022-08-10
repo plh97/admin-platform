@@ -2,7 +2,7 @@
   <div>todo detail</div>
 </template>
 
-<script setup></script>
+<script lang="ts" setup></script>
 
 <route lang="yaml">
 name: detail
@@ -10,4 +10,5 @@ meta:
   name: detail
   layout: Default
   index: 3
+  hide: true
 </route>

@@ -2,7 +2,7 @@
   <div>404</div>
 </template>
 
-<script setup></script>
+<script lang="ts" setup></script>
 
 <route lang="yaml">
 name: 404

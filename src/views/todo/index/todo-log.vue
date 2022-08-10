@@ -2,7 +2,7 @@
   <div>todo-log</div>
 </template>
 
-<script setup></script>
+<script lang="ts" setup></script>
 
 <route lang="yaml">
 name: log

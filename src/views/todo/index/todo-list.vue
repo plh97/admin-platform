@@ -25,23 +25,36 @@
   </el-table>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import http from "@/utils/request";
 import { onMounted, reactive } from "vue";
 
-const state = reactive({
+interface TODO {
+  id: string;
+  name: string;
+  description: string;
+}
+interface IState {
+  list: TODO[];
+  type: number;
+  name: string;
+}
+
+const state = reactive<IState>({
   list: [],
   type: -1,
   name: "",
 });
 
 onMounted(async () => {
-  const res = await http({
+  const res = await http<{
+    list: TODO[];
+  }>({
     url: "list",
     method: "GET",
   });
-  if (res.code === 0) {
-    state.list = res.data.list;
+  if (res) {
+    state.list = res.list;
   }
 });
 function handleAdd() {
