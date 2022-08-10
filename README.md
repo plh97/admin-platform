@@ -22,7 +22,7 @@
 
 - [x] pwa
 
-- [ ] lint-stage
+- [x] lint-stage
 
 - [ ] jest
 
