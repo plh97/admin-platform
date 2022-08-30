@@ -47,7 +47,7 @@ const toggle = ref(true);
   user-select: none;
 }
 .sidebar:not(.el-menu--collapse) {
-  min-width: 200px;
+  width: 200px;
 }
 .toggle-icon {
   cursor: pointer;
