@@ -4,7 +4,7 @@
 
 ## Preview
 
-[admin-platform](https://wondrous-hotteok-ec6236.netlify.app)
+[admin-platform](https://plh2-admin-platform.netlify.app)
 
 ## TODO
 
